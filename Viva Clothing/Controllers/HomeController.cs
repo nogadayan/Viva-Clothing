@@ -13,6 +13,7 @@ namespace Viva_Clothing.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        string connectionString = "Server=172.16.160.21; Port=3306; Database=110502; Uid=110502; Pwd=Inf2021sql;";
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -24,10 +25,7 @@ namespace Viva_Clothing.Controllers
             return View();
         }
 
-        public List<string> GetNames()
-            string connectionString = "Server = 172.16.160.21; Port=3306; Database=fastfood; Uid=110502; Pwd=Inf2021sql;";
-
-        public IActionResult Privacy()
+public IActionResult Privacy()
         {
             return View();
         }
