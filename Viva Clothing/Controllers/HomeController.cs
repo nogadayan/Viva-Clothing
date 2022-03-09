@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using MySql.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -22,6 +23,9 @@ namespace Viva_Clothing.Controllers
         {
             return View();
         }
+
+        public List<string> GetNames()
+            string connectionString = "Server = 172.16.160.21; Port=3306; Database=fastfood; Uid=110502; Pwd=Inf2021sql;";
 
         public IActionResult Privacy()
         {
