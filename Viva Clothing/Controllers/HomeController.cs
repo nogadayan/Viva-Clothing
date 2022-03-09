@@ -7,13 +7,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Viva_Clothing.Models;
+using MySql.Data.MySqlClient;
 
 namespace Viva_Clothing.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        string connectionString = "Server=172.16.160.21; Port=3306; Database=110502; Uid=110502; Pwd=Inf2021sql;";
+        string connectionString = "Server=172.16.160.21; Port=3306; Database=110502; Uid=110502; Pwd=inf2021sql;";
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -22,10 +23,42 @@ namespace Viva_Clothing.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var names = GetNames();
+            return View(names);
         }
 
-public IActionResult Privacy()
+        public List<Product> GetNames()
+        {
+            List<Product> products = new List<Product>();
+
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand("select * from product limit 0,2", conn);
+
+
+                using (var reader = cmd.ExecuteReader())
+                {
+
+                    while (reader.Read()) { 
+                        var product = new Product();
+
+                        product.Name = reader.GetString("naam");
+                        product.Image = reader.GetString("foto"); 
+
+                        products.Add(product);
+                    }
+                }
+            }
+
+            return products;
+        }
+
+
+        public IActionResult Privacy()
         {
             return View();
         }
