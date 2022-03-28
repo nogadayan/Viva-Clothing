@@ -33,7 +33,7 @@ namespace Viva_Clothing.Controllers
 
                 conn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("select * from product limit 0,2", conn);
+                MySqlCommand cmd = new MySqlCommand("select * from product", conn);
 
 
                 using (var reader = cmd.ExecuteReader())
