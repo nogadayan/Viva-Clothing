@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
+using MySqlConnector;
 using System.Collections.Generic;
-using MySql.Data;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Viva_Clothing.Models;
-using MySql.Data.MySqlClient;
 
 namespace Viva_Clothing.Controllers
 {
@@ -47,7 +43,7 @@ namespace Viva_Clothing.Controllers
                         var product = new Product();
 
                         product.Name = reader.GetString("naam");
-                        product.Image = reader.GetString("foto"); 
+                        product.Voorkant = reader.GetString("voorkant");
 
                         products.Add(product);
                     }
