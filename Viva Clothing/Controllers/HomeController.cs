@@ -19,11 +19,11 @@ namespace Viva_Clothing.Controllers
 
         public IActionResult Index()
         {
-            var names = GetNames();
+            var names = GetNames(3);
             return View(names);
         }
 
-        public List<Product> GetNames()
+        public List<Product> GetNames(int limit)
         {
             List<Product> products = new List<Product>();
 
@@ -33,7 +33,7 @@ namespace Viva_Clothing.Controllers
 
                 conn.Open();
 
-                MySqlCommand cmd = new MySqlCommand("select * from product", conn);
+                MySqlCommand cmd = new MySqlCommand($"select * from product limit 0,{limit}", conn);
 
 
                 using (var reader = cmd.ExecuteReader())
@@ -71,7 +71,7 @@ namespace Viva_Clothing.Controllers
         [Route("overzicht")]
         public IActionResult Overzicht()
         {
-            var names = GetNames();
+            var names = GetNames(99);
             return View(names);
         }
 
