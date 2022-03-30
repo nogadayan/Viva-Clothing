@@ -44,7 +44,9 @@ namespace Viva_Clothing.Controllers
 
                         product.Name = reader.GetString("naam");
                         product.Voorkant = reader.GetString("voorkant");
-
+                        product.Achterkant = reader.GetString("achterkant");
+                        product.Zijkant = reader.GetString("zijkant");
+                        product.Fotolos = reader.GetString("fotolos");
 
                         products.Add(product);
                     }
