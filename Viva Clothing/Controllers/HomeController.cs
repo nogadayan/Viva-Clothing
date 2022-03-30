@@ -62,6 +62,16 @@ namespace Viva_Clothing.Controllers
             return View();
         }
 
+        public IActionResult Detailpagina()
+        {
+            return View();
+        }
+
+        public IActionResult Overzicht()
+        {
+            return View();
+        }
+
         public IActionResult Signup()
         {
             return View();
