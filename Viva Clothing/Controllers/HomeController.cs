@@ -45,6 +45,7 @@ namespace Viva_Clothing.Controllers
                         product.Name = reader.GetString("naam");
                         product.Voorkant = reader.GetString("voorkant");
 
+
                         products.Add(product);
                     }
                 }
