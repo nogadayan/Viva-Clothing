@@ -71,6 +71,12 @@ namespace Viva_Clothing.Controllers
             return View();
         }
 
+        [Route("contact")]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
         [Route("detail/{id}")]
         public IActionResult Detailpagina(string id)
         {
