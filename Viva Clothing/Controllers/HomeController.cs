@@ -61,6 +61,8 @@ namespace Viva_Clothing.Controllers
             product.Achterkant = reader.GetString("achterkant");
             product.Zijkant = reader.GetString("zijkant");
             product.Fotolos = reader.GetString("fotolos");
+            product.Beschrijving = reader.GetString("beschrijving");
+            product.Prijs = reader.GetString("prijs");
         }
 
         [Route("privacy")]
