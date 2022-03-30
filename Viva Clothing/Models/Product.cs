@@ -9,6 +9,8 @@ namespace Viva_Clothing.Models
         public string? Voorkant { get; set; }
 
         public string Name { get; set; }
+        public string Prijs { get; set; }
+        public string Beschrijving { get; set; }
         public string Achterkant { get; internal set; }
         public string Zijkant { get; internal set; }
         public string Fotolos { get; internal set; }

@@ -9,10 +9,10 @@
 
     @foreach(Product p in Model)
     {
-        <div class="product">
+        <a href="/detail/@p.Id" class="product">
             <img src="@p.Voorkant" />
             <p>@p.Name</p>            
-        </div>
+        </a>
     }
 
 </div>

@@ -1,18 +1,8 @@
-﻿@model List<Product>
+﻿@model Product
 @{
     ViewData["Title"] = "Detailpagina";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Home!</h1>
-
-
-    @foreach(Product p in Model)
-    {
-        <div class="product">
-            <img src="@p.Voorkant" />
-            <p>@p.Name</p>            
-        </div>
-    }
-
+    <h1 class="display-4">@Model.Name</h1>
 </div>

@@ -39,14 +39,11 @@ namespace Viva_Clothing.Controllers
                 using (var reader = cmd.ExecuteReader())
                 {
 
-                    while (reader.Read()) { 
+                    while (reader.Read())
+                    {
                         var product = new Product();
 
-                        product.Name = reader.GetString("naam");
-                        product.Voorkant = reader.GetString("voorkant");
-                        product.Achterkant = reader.GetString("achterkant");
-                        product.Zijkant = reader.GetString("zijkant");
-                        product.Fotolos = reader.GetString("fotolos");
+                        GetProduct(reader, product);
 
                         products.Add(product);
                     }
@@ -56,16 +53,28 @@ namespace Viva_Clothing.Controllers
             return products;
         }
 
+        private static void GetProduct(MySqlDataReader reader, Product product)
+        {
+            product.Id = reader["id"].ToString();
+            product.Name = reader.GetString("naam");
+            product.Voorkant = reader.GetString("voorkant");
+            product.Achterkant = reader.GetString("achterkant");
+            product.Zijkant = reader.GetString("zijkant");
+            product.Fotolos = reader.GetString("fotolos");
+        }
+
         [Route("privacy")]
         public IActionResult Privacy()
         {
             return View();
         }
 
-        [Route("detail")]
-        public IActionResult Detailpagina()
+        [Route("detail/{id}")]
+        public IActionResult Detailpagina(string id)
         {
-            return View();
+           
+            var model = GetDetails(id);
+            return View(model);
         }
 
         [Route("overzicht")]
@@ -85,6 +94,37 @@ namespace Viva_Clothing.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public Product GetDetails(string id)
+        {
+            List<Product> products = new List<Product>();
+
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+
+                conn.Open();
+                
+                MySqlCommand cmd = new MySqlCommand($"select * from product where id = {id}", conn);
+
+
+                using (var reader = cmd.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {
+                        var product = new Product();
+
+                        GetProduct(reader, product);
+
+
+                        products.Add(product);
+                    }
+                }
+            }
+
+            return products[0];
         }
     }
 }
