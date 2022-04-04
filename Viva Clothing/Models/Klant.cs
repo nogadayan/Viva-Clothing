@@ -9,8 +9,7 @@ namespace Viva_Clothing.Models
         public string Achternaam { get; set; }
 
         public string Email { get; set; }
-        public string Vraag { get; set; }
-        public string Wachtwoord { get; set; }
+        public string  Opmerking { get; set; }
 
     }
 }
