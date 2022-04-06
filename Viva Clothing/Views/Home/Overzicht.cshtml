@@ -14,7 +14,7 @@
     @foreach(Product p in Model)
     {
         <a href="/detail/@p.Id" class="product">
-            <img src="@p.Voorkant" />
+            <img class="img" src="@p.Voorkant" />
             <p>@p.Name</p>            
         </a>
     }

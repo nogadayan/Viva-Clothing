@@ -2,5 +2,7 @@
 
 img {
     padding: 20px;
-
+    width: 200px;
+    height: auto;
+    margin-left: 40px;
 }
