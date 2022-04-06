@@ -17,14 +17,4 @@
     <p>@Model.Beschrijving</p>
 </div>
 
-<button type="button" onclick="/bestel/{id}">Bestellen</button>
-
-<div class="text-center">
-    <h1 class="display-4">Bestellen</h1>
-
-
-    @foreach(Product p in Model)
-    {
-        <a href="/bestel/@p.Id" class="product"></a>
-    }
-</div>
+<a type="button" onclick="/bestel/@Model.Id">Bestellen</a>
