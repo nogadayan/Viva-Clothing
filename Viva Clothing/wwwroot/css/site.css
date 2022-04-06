@@ -5,3 +5,15 @@
     border-radius: 5px;
     text-decoration:none;
 }
+
+.producten {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.img {
+    width: 550px;
+    height: auto;
+    margin-left: 40px;
+}

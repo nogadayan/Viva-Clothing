@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="~/css/site.css" />
 }
 
-<div class="text-center">
-    <h1 class="display-4">Homepage</h1>
 
 
-    @foreach(Product p in Model)
-    {
-        <a href="/detail/@p.Id" class="product">
-            <img src="@p.Voorkant" />
-            <p>@p.Name</p>            
-        </a>
-    }
 
+<div class="text-center" >
+<h1 class="display-4" > Homepage</h1 >
+
+<div class="producten">
+@foreach(Product p in Model) {
+    <a href="/detail/@p.Id" class="product"> 
+        <img class="img" src="@p.Voorkant" /> 
+        <p>@p.Name</p> 
+    </a>
+}
+</div>
 </div>
