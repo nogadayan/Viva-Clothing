@@ -89,8 +89,8 @@ namespace Viva_Clothing.Controllers
         public IActionResult Bestelpagina(string id)
         {
 
-            var model = GetDetails(id);
-            return View(model);
+            var Model = GetDetails(id);
+            return View(Model);
         }
 
         [Route("overzicht")]
