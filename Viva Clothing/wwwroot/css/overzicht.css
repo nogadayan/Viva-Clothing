@@ -4,3 +4,9 @@
     height: auto;
     margin-left: 40px;
 }
+
+.producten{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}

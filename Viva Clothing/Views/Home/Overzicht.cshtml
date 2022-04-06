@@ -10,13 +10,14 @@
 <div class="text-center">
     <h1 class="display-4">Producten</h1>
 
+</div>
 
-    @foreach(Product p in Model)
+<div class="producten">
+        @foreach(Product p in Model)
     {
         <a href="/detail/@p.Id" class="product">
             <img class="img" src="@p.Voorkant" />
             <p>@p.Name</p>            
         </a>
     }
-
 </div>
