@@ -71,11 +71,15 @@ namespace Viva_Clothing.Controllers
             return View();
         }
 
+        [HttpPost]
+        
         [Route("contact")]
         public IActionResult Contact()
         {
-            return View();
+                return View();
         }
+        
+    }
 
         [Route("detail/{id}")]
         public IActionResult Detailpagina(string id)
