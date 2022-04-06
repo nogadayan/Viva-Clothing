@@ -72,19 +72,17 @@ namespace Viva_Clothing.Controllers
         }
 
         [HttpPost]
-        
+
         [Route("contact")]
         public IActionResult Contact()
         {
-                return View();
+            return View();
         }
-        
-    }
 
         [Route("detail/{id}")]
         public IActionResult Detailpagina(string id)
         {
-           
+
             var model = GetDetails(id);
             return View(model);
         }
@@ -125,7 +123,7 @@ namespace Viva_Clothing.Controllers
             {
 
                 conn.Open();
-                
+
                 MySqlCommand cmd = new MySqlCommand($"select * from product where id = {id}", conn);
 
 
