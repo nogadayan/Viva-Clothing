@@ -4,14 +4,15 @@
 }
 
 @section style {
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/bestel.css" />
 }
 <h1>Bestelling</h1> 
 
 <div class="text-center">
     <h1 class="display-4">@Model.Name</h1>
-    <img src="@Model.Fotolos" />
+    <img class="img" src="@Model.Fotolos" />
     <h3>€@Model.Prijs</h3>
 </div>
 
-<img src=~/img/banaan.jpg/>
+<p>U kunt hieronder betalen door middel van Banano. Scan de onderstaande QR code. </p>
+<img class="banano" src=~/img/banaan.jpg/>
