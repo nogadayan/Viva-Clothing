@@ -19,11 +19,22 @@
 }
 
 header {
-    position: fixed;
-    top: 0;
     width: 100%;
-    background-color: grey;
-    height: 25px;
-    display: block;
-    text-align: left;
+    overflow: auto;
+    background-color: lightblue;
 }
+
+header a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    font: Times New Roman;
+}
+
+    header a:hover {
+        background-color: lightcyan;
+        color: black;
+    }
