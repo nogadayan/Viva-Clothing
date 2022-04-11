@@ -6,7 +6,8 @@
 @section style {
     <link rel="stylesheet" href="~/css/bestel.css" />
 }
-<h1>Bestelling</h1> 
+<h1>Bestelling plaatsen</h1>
+<p>Hieronder ziet u alle details van uw bestelling. Controleer deze goed, daarna kunt u betalen via banano.</p>
 
 <div class="text-center">
     <h1 class="display-4">@Model.Name</h1>
@@ -16,3 +17,5 @@
 
 <p>U kunt hieronder betalen door middel van Banano. Scan de onderstaande QR code. </p>
 <img class="banano" src=~/img/banaan.jpg/>
+
+<a class="button" href="/bestel/@Model.Id">Terug</a>
