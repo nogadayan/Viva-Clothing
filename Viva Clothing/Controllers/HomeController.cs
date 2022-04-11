@@ -95,6 +95,14 @@ namespace Viva_Clothing.Controllers
             return View(Model);
         }
 
+        [Route("aankoop/{id}")]
+        public IActionResult Aankoop(string id)
+        {
+
+            var Model = GetDetails(id);
+            return View(Model);
+        }
+
         [Route("overzicht")]
         public IActionResult Overzicht()
         {
