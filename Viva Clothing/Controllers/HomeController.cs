@@ -10,7 +10,7 @@ namespace Viva_Clothing.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        string connectionString = "Server=informatica.st-maartenscollege.nl; Port=3306; Database=110502; Uid=110502; Pwd=inf2021sql;";
+        string connectionString = "Server=172.16.160.21; Port=3306; Database=110502; Uid=110502; Pwd=inf2021sql;";
 
         public HomeController(ILogger<HomeController> logger)
         {
