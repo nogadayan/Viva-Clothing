@@ -88,10 +88,10 @@ namespace Viva_Clothing.Controllers
         {
             maat.Id = reader["id"].ToString();
             maat.Product_id = reader["product_id"].ToString();
-            maat.Maat = reader["maat"].ToString();
+            maat.Maat = reader.GetString("maat");
             maat.Voorraad = reader["Voorraad"].ToString();
-            maat.Prijs = reader["prijs"].ToString();
-            maat.Fotolos = reader["fotolos"].ToString();
+            maat.Prijs = reader.GetString("prijs");
+            maat.Fotolos = reader.GetString("fotolos");
         }
 
         private static void GetProduct(MySqlDataReader reader, Product product)
@@ -134,7 +134,7 @@ namespace Viva_Clothing.Controllers
         public IActionResult Bestelpagina(string id)
         {
 
-            var Model = Get_MaatTabel_Details(id);
+            var Model = GetDetails(id);
             return View(Model);
         }
 
@@ -142,7 +142,7 @@ namespace Viva_Clothing.Controllers
         public IActionResult Aankoop(string id)
         {
 
-            var Model = GetDetails(id);
+            var Model = Get_MaatTabel_Details(id);
             return View(Model);
         }
 
