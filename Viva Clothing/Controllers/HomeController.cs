@@ -72,10 +72,12 @@ namespace Viva_Clothing.Controllers
         }
 
         [Route("contact")]
-        public IActionResult Contact(string voornaam, string achternaam)
+        public IActionResult Contact(string voornaam, string achternaam, string email, string vraag)
         {
             ViewData["voornaam"] = voornaam;
             ViewData["achternaam"] = achternaam;
+            ViewData["email"] = email;
+            ViewData["vraag"] = vraag;
             return View();
         }
 
