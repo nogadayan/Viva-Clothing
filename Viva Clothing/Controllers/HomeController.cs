@@ -110,21 +110,46 @@ namespace Viva_Clothing.Controllers
             product.Prijs = reader.GetString("prijs");
         }
 
-        [Route("privacy")]
-        public IActionResult Privacy()
+        [Route("succes")]
+        public IActionResult Succes()
         {
             return View();
         }
 
-        [Route("contact")]
-        public IActionResult Contact(string voornaam, string achternaam, string email, string vraag)
+        private void SavePerson(Klant klant)
         {
-            ViewData["voornaam"] = voornaam;
-            ViewData["achternaam"] = achternaam;
-            ViewData["email"] = email;
-            ViewData["vraag"] = vraag;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, email, opmerking) VALUES(?voornaam, ?achternaam, ?email, ?opmerking)", conn);
+
+                cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = klant.Voornaam;
+                cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = klant.Achternaam;
+                cmd.Parameters.Add("?email", MySqlDbType.Text).Value = klant.Email;
+                cmd.Parameters.Add("?opmerking", MySqlDbType.Text).Value = klant.Opmerking;
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        [Route("contact")]
+        public IActionResult Contact()
+        {
             return View();
         }
+        [HttpPost]
+        [Route("contact")]
+        public IActionResult Contact(Klant klant)
+        {
+
+            if (ModelState.IsValid)
+            {
+                SavePerson(klant);
+
+                return Redirect("/succes");
+            }
+            return View(klant);
+        }
+
 
         [Route("detail/{id}")]
         public IActionResult Detailpagina(string id)
