@@ -131,6 +131,12 @@ namespace Viva_Clothing.Controllers
             }
         }
 
+        [Route("error")]
+        public IActionResult Error()
+        {
+            return View();
+        }
+
         [Route("contact")]
         public IActionResult Contact()
         {
@@ -189,10 +195,7 @@ namespace Viva_Clothing.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        
 
         public Product GetDetails(string id)
         {
