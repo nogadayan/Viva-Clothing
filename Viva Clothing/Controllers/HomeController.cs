@@ -71,8 +71,6 @@ namespace Viva_Clothing.Controllers
             return View();
         }
 
-        [HttpPost]
-
         [Route("contact")]
         public IActionResult Contact()
         {
