@@ -53,6 +53,36 @@ namespace Viva_Clothing.Controllers
             return products;
         }
 
+         public List<Maat>
+             > GetNames(int limit)
+        {
+            List<Product> products = new List<Product>();
+
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand($"select * from product limit 0,{limit}", conn);
+
+
+                using (var reader = cmd.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {
+                        var product = new Product();
+
+                        GetProduct(reader, product);
+
+                        products.Add(product);
+                    }
+                }
+            }
+
+            return products;
+        }
         private static void GetProduct(MySqlDataReader reader, Product product)
         {
             product.Id = reader["id"].ToString();
