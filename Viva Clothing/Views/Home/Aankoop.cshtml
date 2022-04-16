@@ -17,14 +17,15 @@
         <legend> Kies uw Maat </legend>
         <label> Maat: </label>
         <select>
-            <option>S @Model.Id </option>
-            <option>M @Model.Id </option>
-            <option>L @Model.Id </option>
+            <option>@Model.Product_id@Model.Maat </option> 
+            <option>@Model.Product_id@Model.Maat </option> 
+            <option>@Model.Product_id@Model.Maat </option> 
         </select>
     </form>
 </div>
 
 <p>U kunt hieronder betalen door middel van Banano. Scan de onderstaande QR code. </p>
 <img class="banano" src=~/img/banaan.jpg/>
+
 
 <a class="button" href="/bestel/@Model.Id">Terug</a>

@@ -89,7 +89,7 @@ namespace Viva_Clothing.Controllers
             maat.Id = reader["id"].ToString();
             maat.Product_id = reader["product_id"].ToString();
             maat.Maat = reader.GetString("maat");
-            maat.Voorraad = reader["Voorraad"].ToString();
+            maat.Voorraad = reader["voorraad"].ToString();
             maat.Prijs = reader.GetString("prijs");
             maat.Fotolos = reader.GetString("fotolos");
         }
