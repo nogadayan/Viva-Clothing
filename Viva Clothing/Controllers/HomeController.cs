@@ -157,8 +157,8 @@ namespace Viva_Clothing.Controllers
             return View(names);
         }
 
-        [Route("signup")]
-        public IActionResult Signup()
+        [Route("betalen")]
+        public IActionResult Betalen()
         {
             return View();
         }
