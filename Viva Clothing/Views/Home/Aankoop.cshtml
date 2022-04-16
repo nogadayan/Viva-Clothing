@@ -1,4 +1,5 @@
-﻿@model Product
+﻿@model Maattabel
+
 @{
     ViewData["Title"] = "Bestelpagina";
 }
@@ -10,13 +11,16 @@
 <p>Hieronder ziet u alle details van uw bestelling. Controleer deze goed, daarna kunt u betalen via banano.</p>
 
 <div class="text-center">
-    <h1 class="display-4">@Model.Name</h1>
     <img class="img" src="@Model.Fotolos" />
     <h3>€@Model.Prijs</h3>
     <form>
         <legend> Kies uw Maat </legend>
         <label> Maat: </label>
-        <h3> class="maat" src=@
+        <select>
+            <option>S @Model.Id </option>
+            <option>M @Model.Id </option>
+            <option>L @Model.Id </option>
+        </select>
     </form>
 </div>
 

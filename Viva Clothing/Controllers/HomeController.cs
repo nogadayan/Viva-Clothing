@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Viva_Clothing.Models;
@@ -53,10 +54,9 @@ namespace Viva_Clothing.Controllers
             return products;
         }
 
-         public List<Maat>
-             > GetNames(int limit)
+         public List<Maattabel> GetMaat(int limit)
         {
-            List<Product> products = new List<Product>();
+            List<Maattabel> maten = new List<Maattabel>();
 
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -64,7 +64,7 @@ namespace Viva_Clothing.Controllers
 
                 conn.Open();
 
-                MySqlCommand cmd = new MySqlCommand($"select * from product limit 0,{limit}", conn);
+                MySqlCommand cmd = new MySqlCommand($"select * from product_maat limit 0,{limit}", conn);
 
 
                 using (var reader = cmd.ExecuteReader())
@@ -72,17 +72,28 @@ namespace Viva_Clothing.Controllers
 
                     while (reader.Read())
                     {
-                        var product = new Product();
+                        var maat = new Maattabel();
 
-                        GetProduct(reader, product);
+                        GetProduct_maat(reader, maat);
 
-                        products.Add(product);
+                        maten.Add(maat);
                     }
                 }
             }
 
-            return products;
+            return maten;
         }
+
+        private void GetProduct_maat(MySqlDataReader reader, Maattabel maat)
+        {
+            maat.Id = reader["id"].ToString();
+            maat.Product_id = reader["product_id"].ToString();
+            maat.Maat = reader["maat"].ToString();
+            maat.Voorraad = reader["Voorraad"].ToString();
+            maat.Prijs = reader["prijs"].ToString();
+            maat.Fotolos = reader["fotolos"].ToString();
+        }
+
         private static void GetProduct(MySqlDataReader reader, Product product)
         {
             product.Id = reader["id"].ToString();
@@ -123,7 +134,7 @@ namespace Viva_Clothing.Controllers
         public IActionResult Bestelpagina(string id)
         {
 
-            var Model = GetDetails(id);
+            var Model = Get_MaatTabel_Details(id);
             return View(Model);
         }
 
@@ -156,10 +167,10 @@ namespace Viva_Clothing.Controllers
 
         public Product GetDetails(string id)
         {
-            List<Product> products = new List<Product>();
+            List<Product> products = new List<Product>(); 
 
 
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
 
                 conn.Open();
@@ -183,6 +194,36 @@ namespace Viva_Clothing.Controllers
             }
 
             return products[0];
+        }
+        public Maattabel Get_MaatTabel_Details(string id)
+        {
+            List<Maattabel> maten = new List<Maattabel>();
+
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+
+                conn.Open();
+
+                MySqlCommand cmd = new MySqlCommand($"select * from product_maat where id = {id}", conn);
+
+
+                using (var reader = cmd.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {
+                        var maat = new Maattabel();
+
+                        GetProduct_maat(reader, maat);
+
+
+                        maten.Add(maat);
+                    }
+                }
+            }
+
+            return maten[0];
         }
     }
 }
