@@ -7,21 +7,22 @@
 @section style {
     <link rel="stylesheet" href="~/css/bestel.css" />
 }
-<h1>Bestelling plaatsen</h1>
+<h1>Uw bestelling</h1>
 <p>Hieronder ziet u alle details van uw bestelling. Controleer deze goed, daarna kunt u betalen via banano.</p>
 
 <div class="text-center">
     <img class="img" src="@Model.Fotolos" />
-    <h3>€@Model.Prijs</h3>
+    <h2>€@Model.Prijs</h2>
     <form>
-        <legend> Kies uw Maat </legend>
-        <label> Maat: </label>
+        <legend> Kies uw maat </legend>
+        <label> Maat: </label> 
         <select>
             <option>@Model.Maats </option> 
             <option>@Model.Maatm </option> 
             <option>@Model.Maatl </option> 
         </select>
     </form>
+    <br/> <br/>
 </div>
 <a class="button" href="/betalen/">Afrekenen</a>
 <a class="button" href="/overzicht">Terug naar alle producten</a>

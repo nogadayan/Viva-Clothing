@@ -1,0 +1,14 @@
+﻿input[type=text]{
+    border: none;
+    border-bottom: 2px solid lightblue;
+    width: 60%;
+    margin: 8px 0;
+}
+input[type=submit] {
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: lightblue;
+    color: black;
+    margin-left: 20px
+}

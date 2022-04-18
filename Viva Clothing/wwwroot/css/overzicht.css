@@ -4,8 +4,14 @@
     margin-left: 40px;
 }
 
-.producten{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+p{
+    text-align: left;
+}
+h1{
+    text-align: center;
+
+}
+
+.button {
+    position: center;
 }

@@ -4,18 +4,19 @@
 }
 
 @section style {
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/contact.css" />
+
 }
 
 <h1>@ViewData["Title"]</h1>
 <form method ="post">
-    <div>Voornaam: <input type ="text" name = "voornaam" /></div>
+    <div>Voornaam:  <input type ="text" name = "voornaam" placeholder= "Bijv. Tim"/></div>
     @Html.ValidationMessageFor(m => m.Voornaam)
-    <div>Achternaam: <input type ="text" name = "achternaam" /></div>
+    <div>Achternaam: <input type ="text" name = "achternaam" placeholder= "Bijv. Logtenberg"/></div>
     @Html.ValidationMessageFor(m => m.Achternaam)
-    <div>Email: <input type ="text" name = "email" /></div>
+    <div>Email:    <input type ="text" name = "email" placeholder= "Bijv. lgg@st-maartenscollege.nl"/></div>
     @Html.ValidationMessageFor(m => m.Email)
-    <div>Opmerking: <input type ="text" name = "opmerking" /></div>
+    <div>Opmerking: <textarea name= "opmerking" placeholder ="Uw opmerking..." style="width: 200px"></textarea></div>
     @Html.ValidationMessageFor(m => m.Opmerking)
     <input type = "submit" value = "verstuur"/>
 </form>

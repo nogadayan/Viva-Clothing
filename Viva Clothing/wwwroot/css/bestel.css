@@ -2,10 +2,11 @@
 .img {
     width: 350px;
     height: auto;
-    margin-left: 40px;
+    display: block;
+    float: left;
+    margin-right: 15px;
 }
-
-.banano {
-    width: 375px;
-    height: auto;
+h2{
+    text-align: left;
+    margin-left: 425px;
 }

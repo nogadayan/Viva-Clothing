@@ -1,8 +1,20 @@
 ﻿
-
+.button {
+        margin-left: 46.5%;
+}
 img {
     padding: 20px;
-    width: 350px;
+    width: 265px;
     height: auto;
-    margin-left: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3{
+    text-align: center;
+    font: Times new Roman;
+}
+p {
+    text-align: center;
+    font: Times new Roman;
 }

@@ -1,11 +1,30 @@
-﻿
+﻿.button{
+    margin-top: 15px;
+
+}
 .img {
-    width: 350px;
+    width: 200px;
     height: auto;
     margin-left: 40px;
 }
 
 .banano {
-    width: 375px;
+    width: 400px;
     height: auto;
+    margin-left: 15px;
+}
+
+h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+h2{
+    text-align: left;
+    margin-left: 425px;
+}
+
+
+form{
+     margin-left: 425px;
 }

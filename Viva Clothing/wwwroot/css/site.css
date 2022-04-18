@@ -1,9 +1,19 @@
-﻿.button
+﻿.head{
+    text-align: center;
+}
+.button
 {
-    border: 1px solid black;
     padding: 5px 15px;
     border-radius: 5px;
     text-decoration:none;
+    background-color: lightblue;
+    color:black;
+    margin-left:20px
+}
+
+.button:hover{
+    background-color: lightcyan
+
 }
 
 .producten {
@@ -13,9 +23,10 @@
 }
 
 .img {
-    width: 550px;
+    width: 360px;
     height: auto;
     margin-left: 40px;
+    padding-bottom: 50px;
 }
 
 header {
@@ -24,17 +35,36 @@ header {
     background-color: lightblue;
 }
 
-header a {
-    float: left;
-    text-align: center;
-    padding: 12px;
-    color: black;
-    text-decoration: none;
-    font-size: 24px;
-    font: Times New Roman;
-}
+    header a {
+        float: left;
+        text-align: center;
+        padding: 12px;
+        color: black;
+        text-decoration: none;
+        font-size: 24px;
+        font: Times New Roman;
+    }
 
-    header a:hover {
+header a:hover {
         background-color: lightcyan;
         color: black;
-    }
+}
+
+h1 {
+    text-align: center;
+    font: Times New Roman
+}
+
+h2 {
+    text-align: center;
+    font: Times New Roman
+}
+
+p{
+    text-align: center;
+}
+
+form{
+    margin-left: 425px;
+}
+

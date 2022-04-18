@@ -5,6 +5,7 @@
 
 @section style {
     <link rel="stylesheet" href="~/css/site.css" />
+    
 }
 
 <head>
@@ -17,14 +18,14 @@
 
 
 <div class="text-center" >
-<h1 class="display-4" > Homepage</h1 >
-<h2>Bekijk hieronder onze BEST SELLERS van deze maand!</h2>
+<h1 class="display-4" > Home</h1 >
+<h2>Bekijk hieronder onze Best Sellers van deze maand!</h2>
 
 <div class="producten">
 @foreach(Product p in Model) {
     <a href="/detail/@p.Id" class="product"> 
         <img class="img" src="@p.Voorkant" /> 
-        <p>@p.Name</p> 
+        
     </a>
 }
 </div>
